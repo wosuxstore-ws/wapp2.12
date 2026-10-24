@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bottom-bar scan button: solid accent (#4796E6); the QR icon on it is white -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/home_accent" />
+    <corners android:radius="16dp" />
+</shape>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Android 13+: lets the app show the new-order alerts. Asked once from Home. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- The order listener (OrderAlertService) runs as a foreground service. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- Start the listener again after the phone restarts / the app is updated. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- One-time dialog so Android doesn't put the listener to sleep. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:label="WL Orders"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.WLOrders">
+        <!-- HTTPS only in release. Plain http:// (local test server) is allowed in
+             debug builds only, via src/debug/AndroidManifest.xml. -->
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/Theme.WLOrders.Home"
+            android:exported="false" />
+
+        <activity
+            android:name=".OrdersActivity"
+            android:theme="@style/Theme.WLOrders.Home"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+
+        <activity
+            android:name=".OrderDetailActivity"
+            android:theme="@style/Theme.WLOrders.Home"
+            android:exported="false" />
+
+        <activity
+            android:name=".NotificationsActivity"
+            android:theme="@style/Theme.WLOrders.Home"
+            android:exported="false" />
+
+        <!-- Keeps asking YOUR server (php-api/poll_notifications.php) for new orders. No Firebase. -->
+        <service
+            android:name=".OrderAlertService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Listens to the shop's own server for new orders and shows an alert" />
+        </service>
+
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One "Latest orders" card: light-blue gradient, soft circle top-right, dark text. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="128dp"
+    android:layout_marginEnd="12dp"
+    android:background="@drawable/bg_detail_card"
+    android:clipToOutline="true">
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-55dp"
+        android:layout_marginEnd="-45dp"
+        android:background="@drawable/bg_circle_decor" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/cardOrderNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/cardStatus"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_pill_soft"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/card_text"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_medium"
+            tools:text="#WX-1048" />
+
+        <TextView
+            android:id="@+id/cardStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/bg_pill_soft"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/card_text"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_medium"
+            tools:text="● Placed" />
+
+        <TextView
+            android:id="@+id/cardTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="@color/card_text"
+            android:textSize="24sp"
+            android:fontFamily="@font/poppins_bold"
+            tools:text="Rs. 128.00" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/cardTotal"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cardCustomer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/card_text"
+                android:textSize="17sp"
+                android:fontFamily="@font/poppins_bold"
+                tools:text="Amelia Hart" />
+
+            <TextView
+                android:id="@+id/cardEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/card_text_soft"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:text="amelia.hart@gmail.com"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/cardMeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/card_text_soft"
+                android:textSize="12sp"
+                tools:text="3 items · Oct 9, 2026" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

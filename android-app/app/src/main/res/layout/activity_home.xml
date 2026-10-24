@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/home_bg">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/homeSwipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/homeScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <!-- ============ Header (static) ============ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="12dp">
+
+                    <ImageView
+                        android:id="@+id/menuButton"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_grid"
+                        android:contentDescription="Menu"
+                        app:tint="@color/home_title"
+                        android:background="?attr/selectableItemBackgroundBorderless" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="WOSUX"
+                        android:textColor="@color/home_title"
+                        android:textSize="22sp"
+                        android:letterSpacing="0.18"
+                        android:fontFamily="@font/poppins_bold" />
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_search"
+                        android:contentDescription="Search"
+                        app:tint="@color/home_title" />
+
+                    <FrameLayout
+                        android:id="@+id/bellButton"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_bell"
+                            android:contentDescription="Notifications"
+                            app:tint="@color/home_title" />
+
+                        <View
+                            android:id="@+id/bellDot"
+                            android:visibility="gone"
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_gravity="top|end"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/bg_dot_red" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- ============ Latest orders (DYNAMIC) ============ -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginTop="16dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ordersRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="8dp"
+                        android:clipToPadding="false"
+                        android:overScrollMode="never" />
+
+                    <TextView
+                        android:id="@+id/ordersMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/bg_tile"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:textColor="@color/home_nav_inactive"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        tools:text="No orders yet"
+                        tools:visibility="visible" />
+                </FrameLayout>
+
+                <!-- ============ Quick-access boxes (static) ============ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="24dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/boxStoreSales"
+                        style="@style/HomeQuickBox"
+                        android:layout_marginEnd="12dp">
+                        <ImageView
+                            style="@style/HomeQuickIcon"
+                            android:src="@drawable/ic_store" />
+                        <TextView
+                            style="@style/HomeQuickLabel"
+                            android:text="Store Sales" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/boxNetworking"
+                        style="@style/HomeQuickBox"
+                        android:layout_marginEnd="12dp">
+                        <ImageView
+                            style="@style/HomeQuickIcon"
+                            android:src="@drawable/ic_network" />
+                        <TextView
+                            style="@style/HomeQuickLabel"
+                            android:text="Networking" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/boxOrders"
+                        style="@style/HomeQuickBox">
+                        <ImageView
+                            style="@style/HomeQuickIcon"
+                            android:src="@drawable/ic_list" />
+                        <TextView
+                            style="@style/HomeQuickLabel"
+                            android:text="Orders" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- ============ Products (static) ============ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="24dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Shows "Products", or the picked category's name (HomeActivity.selectCategory) -->
+                        <TextView
+                            android:id="@+id/productsTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="200dp"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="Products"
+                            android:textColor="@color/home_title"
+                            android:textSize="20sp"
+                            android:fontFamily="@font/poppins_bold" />
+
+                        <!-- Opens the Categories popup (see HomeActivity.showCategories) -->
+                        <ImageView
+                            android:id="@+id/categoriesButton"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:padding="9dp"
+                            android:src="@drawable/ic_category"
+                            android:contentDescription="Categories"
+                            android:background="@drawable/bg_circle_white"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            app:tint="@color/home_accent" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:text="See all"
+                        android:textColor="@color/home_accent"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppins_medium" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/productsRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never" />
+
+                <TextView
+                    android:id="@+id/productsMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/bg_tile"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:textColor="@color/home_nav_inactive"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    tools:text="No products yet"
+                    tools:visibility="visible" />
+
+                <!-- Shown under the grid while the next page loads (or if it failed). -->
+                <TextView
+                    android:id="@+id/productsFooter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:textColor="@color/home_nav_inactive"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    tools:text="Loading more…"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- ============ Bottom navigation (static) ============ -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/home_nav_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/home_nav_bg"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout style="@style/HomeNavItem">
+            <ImageView
+                style="@style/HomeNavIcon"
+                android:src="@drawable/ic_home"
+                app:tint="@color/home_accent" />
+            <TextView
+                style="@style/HomeNavLabel"
+                android:text="Home"
+                android:textColor="@color/home_accent"
+                android:fontFamily="@font/poppins_medium" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/HomeNavItem">
+            <ImageView
+                style="@style/HomeNavIcon"
+                android:src="@drawable/ic_box"
+                app:tint="@color/home_nav_inactive" />
+            <TextView
+                style="@style/HomeNavLabel"
+                android:text="Stock" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_nav_scan"
+                android:padding="9dp"
+                android:src="@drawable/ic_qr"
+                android:contentDescription="Scan QR code"
+                app:tint="@android:color/white" />
+        </FrameLayout>
+
+        <LinearLayout style="@style/HomeNavItem">
+            <ImageView
+                style="@style/HomeNavIcon"
+                android:src="@drawable/ic_chart"
+                app:tint="@color/home_nav_inactive" />
+            <TextView
+                style="@style/HomeNavLabel"
+                android:text="Reports" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/HomeNavItem">
+            <ImageView
+                style="@style/HomeNavIcon"
+                android:src="@drawable/ic_users"
+                app:tint="@color/home_nav_inactive" />
+            <TextView
+                style="@style/HomeNavLabel"
+                android:text="Customers" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

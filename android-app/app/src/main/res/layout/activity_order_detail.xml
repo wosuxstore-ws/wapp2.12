@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/home_bg">
+
+    <!-- ============ Header: back / title / more ============ -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            style="@style/HeaderCircleButton"
+            android:layout_gravity="start|center_vertical"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back"
+            app:tint="@color/home_title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Order details"
+            android:textColor="@color/home_title"
+            android:textSize="17sp"
+            android:fontFamily="@font/poppins_medium" />
+
+        <ImageView
+            android:id="@+id/moreButton"
+            style="@style/HeaderCircleButton"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/ic_more"
+            android:contentDescription="More"
+            app:tint="@color/home_title" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:id="@+id/detailScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="16dp">
+
+                <!-- ============ Hero card ============ -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_detail_card"
+                    android:clipToOutline="true">
+
+                    <View
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="-60dp"
+                        android:layout_marginEnd="-50dp"
+                        android:background="@drawable/bg_circle_decor" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="132dp"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/heroNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/bg_pill_soft"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:textColor="@color/card_text"
+                            android:textSize="12sp"
+                            tools:text="#WX-1048" />
+
+                        <TextView
+                            android:id="@+id/heroStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/bg_pill_soft"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:textColor="@color/card_text"
+                            android:textSize="12sp"
+                            tools:text="● Placed" />
+
+                        <TextView
+                            android:id="@+id/heroTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:textColor="@color/card_text"
+                            android:textSize="26sp"
+                            android:fontFamily="@font/poppins_bold"
+                            tools:text="Rs. 128.00" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toStartOf="@+id/heroTotal"
+                            android:layout_marginEnd="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/heroName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textColor="@color/card_text"
+                                android:textSize="18sp"
+                                android:fontFamily="@font/poppins_bold"
+                                tools:text="Amelia Hart" />
+
+                            <TextView
+                                android:id="@+id/heroEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textColor="@color/card_text_soft"
+                                android:textSize="12sp"
+                                android:visibility="gone"
+                                tools:text="amelia.hart@gmail.com"
+                                tools:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/heroMeta"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textColor="@color/card_text_soft"
+                                android:textSize="12sp"
+                                tools:text="3 items · Oct 9, 2026" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <!-- ============ Status stepper (filled in code) ============ -->
+                <LinearLayout
+                    android:id="@+id/stepper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:orientation="horizontal" />
+
+                <!-- ============ Delivery details ============ -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="Delivery details"
+                    android:textColor="@color/home_title"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:background="@drawable/bg_icon_circle"
+                        android:padding="11dp"
+                        android:src="@drawable/ic_phone"
+                        android:importantForAccessibility="no"
+                        app:tint="@color/home_blue" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Phone number"
+                            android:textColor="@color/home_nav_inactive"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/detailPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/home_title"
+                            android:textIsSelectable="true"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_medium"
+                            tools:text="+1 (555) 014-2277" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/row_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:background="@drawable/bg_icon_circle"
+                        android:padding="11dp"
+                        android:src="@drawable/ic_pin"
+                        android:importantForAccessibility="no"
+                        app:tint="@color/home_blue" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Delivery address"
+                            android:textColor="@color/home_nav_inactive"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/detailAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/home_title"
+                            android:textIsSelectable="true"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/poppins_medium"
+                            tools:text="12 Maple Street\nSpringfield, IL 62704" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/row_divider" />
+
+                <!-- ============ Items ============ -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:text="Items"
+                    android:textColor="@color/home_title"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_bold" />
+
+                <LinearLayout
+                    android:id="@+id/itemsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <!-- ============ Totals ============ -->
+                <LinearLayout
+                    android:id="@+id/totalsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/detailProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/home_blue"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- ============ Next-step button ============ -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextStatusButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_button_primary"
+        android:stateListAnimator="@null"
+        android:textAllCaps="false"
+        android:textColor="#14183C"
+        android:textSize="15sp"
+        android:fontFamily="@font/poppins_medium"
+        android:visibility="gone"
+        tools:text="Move to Processing"
+        tools:visibility="visible" />
+
+</LinearLayout>

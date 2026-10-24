@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Storefront (Home quick box: Store Sales) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path android:strokeColor="@color/home_accent" android:strokeWidth="1.6" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M3,9 L5,3 H19 L21,9"/>
+    <path android:strokeColor="@color/home_accent" android:strokeWidth="1.6" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M3,9 a3,3 0 0 0 6,0 a3,3 0 0 0 6,0 a3,3 0 0 0 6,0"/>
+    <path android:strokeColor="@color/home_accent" android:strokeWidth="1.6" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M5,11.8 V20 a1,1 0 0 0 1,1 H18 a1,1 0 0 0 1,-1 V11.8"/>
+    <path android:strokeColor="@color/home_accent" android:strokeWidth="1.6" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M10,21 v-4.5 a1.5,1.5 0 0 1 1.5,-1.5 h1 a1.5,1.5 0 0 1 1.5,1.5 V21"/>
+</vector>

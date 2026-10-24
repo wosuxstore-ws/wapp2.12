@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Notifications page: back + mark-all-read buttons, big title, "N unread", then the list. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/home_bg">
+
+    <!-- Header buttons -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            style="@style/HeaderCircleButton"
+            android:layout_gravity="start|center_vertical"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back"
+            app:tint="@color/home_title" />
+
+        <ImageView
+            android:id="@+id/markAllButton"
+            style="@style/HeaderCircleButton"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/ic_check_all"
+            android:contentDescription="Mark all as read"
+            app:tint="@color/home_title" />
+    </FrameLayout>
+
+    <!-- Title + unread count -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:includeFontPadding="false"
+        android:text="Notifications"
+        android:textColor="@color/home_title"
+        android:textSize="30sp"
+        android:fontFamily="@font/poppins_bold" />
+
+    <TextView
+        android:id="@+id/unreadText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="14dp"
+        android:includeFontPadding="false"
+        android:textColor="@color/home_nav_inactive"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/row_divider" />
+
+    <!-- List -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/notificationsSwipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notificationsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingBottom="8dp" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:id="@+id/notificationsEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:textColor="@color/home_nav_inactive"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

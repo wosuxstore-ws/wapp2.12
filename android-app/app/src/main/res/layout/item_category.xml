@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One category in the Categories popup. Picture / label / selected look are set by HomeCategoryAdapter. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingTop="6dp"
+    android:paddingBottom="10dp"
+    android:paddingStart="2dp"
+    android:paddingEnd="2dp">
+
+    <!-- Outer box is NOT clipped, so the check badge can sit on the edge of the circle. -->
+    <FrameLayout
+        android:layout_width="96dp"
+        android:layout_height="96dp">
+
+        <!-- The circle itself. clipToOutline cuts the picture to the round background. -->
+        <FrameLayout
+            android:id="@+id/categoryCircle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_category"
+            android:clipToOutline="true">
+
+            <!-- Fallback icon: shown when the category has no picture (or it hasn't loaded). -->
+            <ImageView
+                android:id="@+id/categoryIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                app:tint="@color/home_title"
+                tools:src="@drawable/ic_handsfree" />
+
+            <!-- Category picture: hidden until it has loaded. centerCrop = fills the whole circle. -->
+            <ImageView
+                android:id="@+id/categoryPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <!-- Blue ring on top of the picture when this category is selected. -->
+            <View
+                android:id="@+id/categoryRing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_category_ring"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/categoryCheck"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/bg_check_badge"
+            android:importantForAccessibility="no"
+            android:padding="5dp"
+            android:src="@drawable/ic_check"
+            android:visibility="gone"
+            app:tint="@android:color/white"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/categoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/home_title"
+        android:textSize="12sp"
+        tools:text="Handsfree" />
+</LinearLayout>

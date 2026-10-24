@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One product line on the Order details screen. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/lineIcon"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_tile"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            tools:text="S" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lineName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:textColor="@color/home_title"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_medium"
+                tools:text="Shirt" />
+
+            <TextView
+                android:id="@+id/lineMeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/home_nav_inactive"
+                android:textSize="12sp"
+                tools:text="Qty 2 · Rs. 42.00 each" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lineTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/home_title"
+            android:textSize="15sp"
+            android:fontFamily="@font/poppins_medium"
+            tools:text="Rs. 84.00" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/row_divider" />
+</LinearLayout>

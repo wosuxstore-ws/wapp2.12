@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Same static bottom bar as Home. Only Home is tappable for now. Selected item = home_accent. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/home_nav_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/home_nav_bg"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            style="@style/HomeNavItem"
+            android:background="?attr/selectableItemBackground">
+            <ImageView
+                style="@style/HomeNavIcon"
+                android:src="@drawable/ic_home"
+                app:tint="@color/home_accent" />
+            <TextView
+                style="@style/HomeNavLabel"
+                android:text="Home"
+                android:textColor="@color/home_accent"
+                android:fontFamily="@font/poppins_medium" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/HomeNavItem">
+            <ImageView
+                style="@style/HomeNavIcon"
+                android:src="@drawable/ic_box"
+                app:tint="@color/home_nav_inactive" />
+            <TextView
+                style="@style/HomeNavLabel"
+                android:text="Stock" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_nav_scan"
+                android:padding="9dp"
+                android:src="@drawable/ic_qr"
+                android:contentDescription="Scan QR code"
+                app:tint="@android:color/white" />
+        </FrameLayout>
+
+        <LinearLayout style="@style/HomeNavItem">
+            <ImageView
+                style="@style/HomeNavIcon"
+                android:src="@drawable/ic_chart"
+                app:tint="@color/home_nav_inactive" />
+            <TextView
+                style="@style/HomeNavLabel"
+                android:text="Reports" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/HomeNavItem">
+            <ImageView
+                style="@style/HomeNavIcon"
+                android:src="@drawable/ic_users"
+                app:tint="@color/home_nav_inactive" />
+            <TextView
+                style="@style/HomeNavLabel"
+                android:text="Customers" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

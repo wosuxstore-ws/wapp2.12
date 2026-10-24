@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Light theme with a black toolbar. (Always light, so text stays readable
+         on the light background even when the phone is in dark mode.) -->
+    <style name="Theme.WLOrders" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorControlActivated">@color/accent</item>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    <!-- Home dashboard: no action bar, light status bar, Poppins everywhere -->
+    <style name="Theme.WLOrders.Home" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/home_blue</item>
+        <item name="colorPrimaryDark">@color/home_bg</item>
+        <item name="colorSecondary">@color/home_blue</item>
+        <item name="android:windowBackground">@color/home_bg</item>
+        <item name="android:statusBarColor">@color/home_bg</item>
+        <item name="android:navigationBarColor">@color/home_nav_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="fontFamily">@font/poppins_regular</item> <!-- AppCompat: Android 7.x -->
+    </style>
+
+    <!-- Category chip -->
+    <style name="HomeChip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:background">@drawable/bg_chip</item>
+        <item name="android:textColor">@color/home_chip_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- Categories popup: Material bottom sheet, white with rounded top corners -->
+    <style name="ThemeOverlay.WLOrders.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.WLOrders.BottomSheet</item>
+    </style>
+    <style name="Widget.WLOrders.BottomSheet" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.WLOrders.Sheet</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.WLOrders.Sheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">32dp</item>
+        <item name="cornerSizeTopRight">32dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <!-- Quick-access boxes on Home (Store Sales / Networking / Stock): icon over label -->
+    <style name="HomeQuickBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">96dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:background">@drawable/bg_quick_box</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="HomeQuickIcon">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+    <style name="HomeQuickLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textColor">@color/home_title</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Bottom nav -->
+    <style name="HomeNavItem">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+    <style name="HomeNavIcon">
+        <item name="android:layout_width">26dp</item>
+        <item name="android:layout_height">26dp</item>
+    </style>
+    <style name="HomeNavLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/home_nav_inactive</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- Orders list chip (smaller than the Home category chip) -->
+    <style name="OrdersChip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">38dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:background">@drawable/bg_chip</item>
+        <item name="android:textColor">@color/home_chip_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- Round white header buttons (back / more) -->
+    <style name="HeaderCircleButton">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/bg_circle_white</item>
+    </style>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand palette, sampled from the logo -->
+    <color name="primary">#000000</color>          <!-- logo black: toolbar, buttons, titles -->
+    <color name="primary_dark">#000000</color>     <!-- status bar -->
+    <color name="accent">#2080BB</color>           <!-- logo blue: highlights, spinners, focus -->
+    <color name="accent_light">#34D4DE</color>     <!-- logo cyan (arrow tip) -->
+    <color name="brand_gray">#A3A5A7</color>       <!-- logo silver-gray -->
+
+    <color name="background">#F2F3F4</color>
+    <color name="text_primary">#111111</color>
+    <color name="text_secondary">#6B6E72</color>
+
+    <color name="ic_launcher_background">#000000</color>
+
+    <!-- ===== Home screen (dashboard) ===== -->
+    <color name="home_bg">#F2F2F7</color>
+    <color name="home_title">#14183C</color>
+    <color name="home_blue">#2563EB</color>
+    <color name="home_blue_light">#DCE8FD</color>
+    <color name="home_nav_inactive">#6B7280</color>
+    <color name="home_nav_bg">#FAFAFC</color>
+    <color name="home_nav_divider">#E4E4EA</color>
+    <color name="home_chip_text">#1A1D2E</color>
+
+    <color name="card_blue_start">#2F6BEA</color>
+    <color name="card_blue_end">#2358E0</color>
+    <color name="card_black">#1C1C1F</color>
+
+    <color name="tile_blue_bg">#DCE4F7</color>
+    <color name="tile_blue_fg">#2563EB</color>
+    <color name="tile_peach_bg">#FDE5D6</color>
+    <color name="tile_peach_fg">#C2540A</color>
+    <color name="tile_green_bg">#D7E9DE</color>
+    <color name="tile_green_fg">#1E7A4A</color>
+    <color name="tile_lilac_bg">#E4DCF1</color>
+    <color name="tile_lilac_fg">#6D3FC0</color>
+
+    <color name="notif_dot">#EF4444</color>
+
+    <!-- ===== Notifications page ===== -->
+    <color name="notif_order_bg">#E7E7EC</color>   <!-- grey circle behind the order icon -->
+
+    <!-- ===== Categories popup (bottom sheet) ===== -->
+    <color name="category_bg">#F0F0F3</color>
+    <color name="category_selected_bg">#DFF0FC</color>
+    <color name="category_selected_stroke">#5BAEF0</color>
+    <color name="category_check">#4796E6</color>
+    <color name="sheet_handle">#D1D3DA</color>
+
+    <!-- ===== Home accent: quick-box icons, categories icon, "See all" links ===== -->
+    <color name="home_accent">#4796E6</color>
+
+    <!-- ===== Orders list / Order details ===== -->
+    <color name="detail_blue_start">#6AB4F2</color>
+    <color name="detail_blue_end">#4796E6</color>
+    <color name="detail_button">#5BAEF0</color>
+    <color name="detail_button_disabled">#B9D9F5</color>
+    <color name="step_todo">#C9CDD6</color>
+    <color name="row_divider">#E4E4EA</color>
+
+    <!-- status pills (list + details) -->
+    <color name="pill_placed_bg">#DCE8FD</color>
+    <color name="pill_placed_fg">#1D4ED8</color>
+    <color name="pill_processing_bg">#FDE6CC</color>
+    <color name="pill_processing_fg">#B45309</color>
+    <color name="pill_preparing_bg">#D5F1F3</color>
+    <color name="pill_preparing_fg">#0E7490</color>
+    <color name="pill_shipped_bg">#E4DCF1</color>
+    <color name="pill_shipped_fg">#6D3FC0</color>
+    <color name="pill_delivered_bg">#D7EFDF</color>
+    <color name="pill_delivered_fg">#1E7A4A</color>
+    <color name="pill_cancelled_bg">#FDE0E0</color>
+    <color name="pill_cancelled_fg">#B91C1C</color>
+
+    <!-- order cards (Home + details): dark text on the light-blue gradient -->
+    <color name="card_text">#14183C</color>
+    <color name="card_text_soft">#B314183C</color>
+</resources>
